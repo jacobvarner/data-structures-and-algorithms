@@ -51,6 +51,11 @@ test('The function .front() does not decrease the length', () => {
 	expect(queue.length).toBe(3);
 });
 
+test('The function .front() returns null for an empty queue', () => {
+	const queue = new Queue();
+	expect(queue.first()).toBeNull();
+});
+
 test('The function .last() returns the last item in the queue', () => {
 	const queue = new Queue();
 	queue.enqueue(1);
@@ -59,13 +64,18 @@ test('The function .last() returns the last item in the queue', () => {
 	expect(queue.last()).toBe(3);
 });
 
-test('The function .last() does not decrase the length', () => {
+test('The function .last() does not decrease the length', () => {
 	const queue = new Queue();
 	queue.enqueue(1);
 	queue.enqueue(2);
 	queue.enqueue(3);
 	queue.last();
-	expect(queue.length()).toBe(3);
+	expect(queue.length).toBe(3);
+});
+
+test('The function .last() returns null for an empty queue', () => {
+	const queue = new Queue();
+	expect(queue.last()).toBeNull();
 });
 
 test('The function .isSameType() is true for queues that have items of the same type', () => {
@@ -73,6 +83,11 @@ test('The function .isSameType() is true for queues that have items of the same 
 	queue.enqueue(1);
 	queue.enqueue(2);
 	queue.enqueue(3);
+	expect(queue.isSameType()).toBe(true);
+});
+
+test('The function .isSameType() is true for empty queues', () => {
+	const queue = new Queue();
 	expect(queue.isSameType()).toBe(true);
 });
 
