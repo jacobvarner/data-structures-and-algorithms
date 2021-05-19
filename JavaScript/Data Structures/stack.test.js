@@ -23,25 +23,25 @@ test('Popping from an empty stack returns null', () => {
 	expect(stack.pop()).toBeNull();
 });
 
-test('Calling .top() on an empty stack returns null', () => {
+test('Calling .peek() on an empty stack returns null', () => {
 	const stack = new Stack();
-	expect(stack.top()).toBeNull();
+	expect(stack.peek()).toBeNull();
 });
 
-test('.top() returns the top item on the stack', () => {
+test('.peek() returns the top item on the stack', () => {
 	const stack = new Stack();
 	stack.push(1);
 	stack.push(2);
 	stack.push(3);
-	expect(stack.top()).toBe(3);
+	expect(stack.peek()).toBe(3);
 });
 
-test('.top() does not decrease the height', () => {
+test('.peek() does not decrease the height', () => {
 	const stack = new Stack();
 	stack.push(1);
 	stack.push(2);
 	stack.push(3);
-	stack.top();
+	stack.peek();
 	expect(stack.height).toBe(3);
 });
 
