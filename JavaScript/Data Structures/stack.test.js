@@ -50,3 +50,12 @@ test('Adding an element to the stack increases the height', () => {
 	stack.push(1);
 	expect(stack.height).toBe(1);
 });
+
+test('Emptying the stack removes all elements and has a height of 0', () => {
+	const stack = new Stack();
+	stack.push(1);
+	stack.push(2);
+	stack.push(3);
+	stack.empty();
+	expect(stack.height).toBe(0);
+});

@@ -35,6 +35,14 @@ function Stack() {
 		if (this.height === 0) return null;
 		return this.stack[this.height - 1];
 	};
+
+	/**
+	 * Empties the stack.
+	 */
+	this.empty = () => {
+		this.height = 0;
+		this.stack = [];
+	};
 }
 
 module.exports = Stack;
