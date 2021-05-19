@@ -1,5 +1,5 @@
 const { test, expect } = require('@jest/globals');
-const Stack = require('./stack');
+const Stack = require('./Stack');
 
 test('Stack data structure exists', () => {
 	expect(typeof new Stack()).toBe('object');

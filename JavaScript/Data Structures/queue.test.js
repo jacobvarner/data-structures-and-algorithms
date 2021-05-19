@@ -1,5 +1,5 @@
 const { test, expect } = require('@jest/globals');
-const Queue = require('./queue');
+const Queue = require('./Queue');
 
 test('Queue data structure exists', () => {
 	expect(typeof new Queue()).toBe('object');
