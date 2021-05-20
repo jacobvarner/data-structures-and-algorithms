@@ -1,16 +1,18 @@
 /**
  * A Stack data structure that implements a LIFO list of items.
  */
-function Stack() {
-	this.height = 0;
-	this.stack = [];
+class Stack {
+	constructor() {
+		this.height = 0;
+		this.stack = [];
+	}
 
 	/**
 	 * Adds an item to the stack.
 	 *
 	 * @params {} value the value added to the top of the stack
 	 */
-	this.push = (val) => {
+	push = (val) => {
 		this.stack.push(val);
 		this.height++;
 	};
@@ -20,7 +22,7 @@ function Stack() {
 	 *
 	 * @returns {}  the item at the top of the stack.
 	 */
-	this.pop = () => {
+	pop = () => {
 		if (this.height === 0) return null;
 		this.height--;
 		return this.stack.pop();
@@ -31,7 +33,7 @@ function Stack() {
 	 *
 	 * @returns {}  the item at the top of the stack.
 	 */
-	this.peek = () => {
+	peek = () => {
 		if (this.height === 0) return null;
 		return this.stack[this.height - 1];
 	};
@@ -39,7 +41,7 @@ function Stack() {
 	/**
 	 * Empties the stack.
 	 */
-	this.empty = () => {
+	empty = () => {
 		this.height = 0;
 		this.stack = [];
 	};

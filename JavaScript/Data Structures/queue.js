@@ -3,16 +3,18 @@
  *
  * @param {Array} array the initial array or single item to intialize the queue with.
  */
-function Queue(array = []) {
-	this.length = Array.isArray(array) ? array.length : 1;
-	this.array = Array.isArray(array) ? array : [array];
+class Queue {
+	constructor(array = []) {
+		this.length = Array.isArray(array) ? array.length : 1;
+		this.array = Array.isArray(array) ? array : [array];
+	}
 
 	/**
 	 * Adds an item to the queue and increases the length by 1.
 	 *
 	 * @param {} value the value the add to the queue
 	 */
-	this.enqueue = (value) => {
+	enqueue = (value) => {
 		this.array.push(value);
 		this.length++;
 	};
@@ -22,7 +24,7 @@ function Queue(array = []) {
 	 *
 	 * @returns {}  the first value added to the queue
 	 */
-	this.dequeue = () => {
+	dequeue = () => {
 		if (!this.length) return null;
 		let output = this.array.shift();
 		this.length--;
@@ -34,7 +36,7 @@ function Queue(array = []) {
 	 *
 	 * @returns {}  the first value in the queue
 	 */
-	this.first = () => {
+	first = () => {
 		if (!this.length) return null;
 		return this.array[0];
 	};
@@ -44,7 +46,7 @@ function Queue(array = []) {
 	 *
 	 * @returns {}  the last item in the queue
 	 */
-	this.last = () => {
+	last = () => {
 		if (!this.length) return null;
 		return this.array[this.length - 1];
 	};
@@ -54,7 +56,7 @@ function Queue(array = []) {
 	 *
 	 * @returns {Boolean}   whether or not all items in the queue are of the same type
 	 */
-	this.isSameType = () => {
+	isSameType = () => {
 		if (!this.length) return true;
 		let type = typeof this.array[0];
 		return this.array.every((e) => {
