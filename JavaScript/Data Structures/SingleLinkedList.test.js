@@ -54,7 +54,7 @@ test('Inserting an element with .addAt(val, i) inserts a node with the given val
 	expect(sll.head.next.next.value).toBe('test');
 	sll.addAt('test2', 99);
 	expect(sll.length).toBe(7);
-	expect(sll.head.next.next.next.next.next.next.value).toBe('test');
+	expect(sll.head.next.next.next.next.next.next.value).toBe('test2');
 });
 
 test('Inserting an element with .addAt(val, i) does not add a null value and therefore does not increase the length', () => {
