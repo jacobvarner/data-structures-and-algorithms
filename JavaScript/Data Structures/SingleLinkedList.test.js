@@ -40,7 +40,13 @@ test('Adding an element with .add(val) appends a node with the correct value to 
 	expect(sll.head.next.value).toBe(2);
 });
 
-test('Inserting an element with .addAt(val, i) inserts a node with the given value at the given index, or the end of the list if the index is greater than the length', () => {
+test('Adding an element with .add(val) does not add a null value and therefore does not increase the length', () => {
+	const sll = new SingleLinkedList([1, 2, 3]);
+	sll.add(null);
+	expect(sll.length).toBe(3);
+});
+
+test('Inserting an element with .addAt(val, i) inserts a node with the given value at the given index, or the end of the list if the index is greater than the length or null', () => {
 	const sll = new SingleLinkedList([1, 2, 3, 4, 5]);
 	sll.addAt('test', 2);
 	expect(sll.length).toBe(6);
@@ -49,6 +55,12 @@ test('Inserting an element with .addAt(val, i) inserts a node with the given val
 	sll.addAt('test2', 99);
 	expect(sll.length).toBe(7);
 	expect(sll.head.next.next.next.next.next.next.value).toBe('test');
+});
+
+test('Inserting an element with .addAt(val, i) does not add a null value and therefore does not increase the length', () => {
+	const sll = new SingleLinkedList([1, 2, 3]);
+	sll.add(null);
+	expect(sll.length).toBe(3);
 });
 
 test('Removing an element with .remove(val) attempts to remove all of the elements with matching value and returns false if the value was not found', () => {
