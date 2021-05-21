@@ -1,26 +1,31 @@
 /**
- * A Stack data structure that implements a LIFO list of items.
+ * A stack data structure that implements a LIFO list of items.
  */
 class Stack {
+	/**
+	 * Creates an empty stack.
+	 */
 	constructor() {
 		this.height = 0;
 		this.stack = [];
 	}
 
 	/**
-	 * Adds an item to the stack.
-	 *
-	 * @params {} value the value added to the top of the stack
+	 * Adds an item to the top of the stack and increases the height by 1.
+	 * @params {*} value - The value added to the top of the stack.
+	 * @throws Will throw and error if a value is not provided.
 	 */
-	push = (val) => {
+	push = (value) => {
+		if (typeof value === 'undefined') {
+			throw 'A value must be provided.';
+		}
 		this.stack.push(val);
 		this.height++;
 	};
 
 	/**
-	 * Removes the top item from the stack.
-	 *
-	 * @returns {}  the item at the top of the stack.
+	 * Removes the top item from the stack and decreases the height by 1.
+	 * @returns {*} The item at the top of the stack or null if the stack is empty.
 	 */
 	pop = () => {
 		if (this.height === 0) return null;
@@ -30,8 +35,7 @@ class Stack {
 
 	/**
 	 * Returns the top item from the stack but does not remove it.
-	 *
-	 * @returns {}  the item at the top of the stack.
+	 * @returns {*} The item at the top of the stack or null if the stack is empty.
 	 */
 	peek = () => {
 		if (this.height === 0) return null;

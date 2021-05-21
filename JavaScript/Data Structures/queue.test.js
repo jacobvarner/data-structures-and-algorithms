@@ -5,7 +5,7 @@ test('Queue data structure exists', () => {
 	expect(typeof new Queue()).toBe('object');
 });
 
-test('Queue has a length of 0 on initialization', () => {
+test('Queue has a length of 0 with default initialization', () => {
 	const queue = new Queue();
 	expect(queue.length).toBe(0);
 });
