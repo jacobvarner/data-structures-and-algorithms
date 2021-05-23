@@ -12,7 +12,14 @@ test('HashTable has an initial size of 0', () => {
 
 test('Passing a number to the HashTable constructor will give the HashTable that size table', () => {
 	const ht = new HashTable(255);
-	expect(ht.table.length).toBe(255);
+	expect(ht.buckets.length).toBe(255);
+});
+
+test('Using a non-string key will result in an error', () => {
+	const ht = new HashTable();
+	expect(() => ht.set(1, 'test')).toThrow();
+	expect(() => ht.get(1, 'test')).toThrow();
+	expect(() => ht.remove(1, 'test')).toThrow();
 });
 
 test('Adding elements to the HashTable increases the size and returns true', () => {
@@ -45,11 +52,11 @@ test('Getting an element by its key returns the element value or null if nothing
 	expect(ht.size).toBe(3);
 });
 
-test('Adding multiple elements with the same key returns null and does not increase the size', () => {
+test('Adding multiple elements with the same key returns false and does not increase the size', () => {
 	const ht = new HashTable();
 	ht.set('test', 'test');
 	ht.set('test2', 'test2');
-	expect(ht.set('test', 'test2')).toBeNull();
+	expect(ht.set('test', 'test2')).toBe(false);
 	expect(ht.size).toBe(2);
 });
 

@@ -17,9 +17,9 @@ class Stack {
 	 */
 	push = (value) => {
 		if (typeof value === 'undefined') {
-			throw 'A value must be provided.';
+			throw new Error('A value must be provided.');
 		}
-		this.stack.push(val);
+		this.stack.push(value);
 		this.height++;
 	};
 

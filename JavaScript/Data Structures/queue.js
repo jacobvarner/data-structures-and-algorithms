@@ -18,7 +18,7 @@ class Queue {
 	 */
 	enqueue = (value) => {
 		if (typeof value === 'undefined') {
-			throw 'There must be a value to add to the queue.';
+			throw new Error('There must be a value to add to the queue.');
 		}
 		this.array.push(value);
 		this.length++;
