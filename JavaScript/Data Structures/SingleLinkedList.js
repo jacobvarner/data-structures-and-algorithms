@@ -3,9 +3,9 @@
  */
 class SingleLinkedList {
 	/**
-	 * Constructor initializes the SingleLinkedList whether it has no initial value, has a single initial value, or has a list of initial values in an array
-	 *
-	 * @param {} init  the initial value(s) to initialize the linked list
+	 * Constructor initializes the SingleLinkedList whether it has no initial value, has a single initial value,
+	 * or has a list of initial values in an array.
+	 * @param {array} init - The initial value(s) to initialize the linked list.
 	 */
 	constructor(init = null) {
 		if (init === null) {
@@ -29,8 +29,7 @@ class SingleLinkedList {
 
 	/**
 	 * Adds a value at the end of the linked list.
-	 *
-	 * @param {} val the value to be added to the linked list
+	 * @param {*} val - The value to be added to the linked list.
 	 */
 	add = (val) => {
 		if (val !== null) {
@@ -50,9 +49,8 @@ class SingleLinkedList {
 
 	/**
 	 * Adds a value at the given index, or adds it at the end of the list if the given index is larger than the length.
-	 *
-	 * @param {} val  the value to be added to the linked list
-	 * @param {number} i  the index where the value should be added
+	 * @param {*} val - The value to be added to the linked list.
+	 * @param {number} i - The index where the value should be added.
 	 */
 	addAt = (val, i) => {
 		if (val !== null) {
@@ -77,9 +75,8 @@ class SingleLinkedList {
 
 	/**
 	 * Removes all instances of the value.
-	 *
-	 * @param {} val  the value to be removed from the linked list
-	 * @returns {boolean} result  whether the value was found and removed or not
+	 * @param {} val - The value to be removed from the linked list.
+	 * @returns {boolean} result - Whether the value(s) was found and removed or not.
 	 */
 	remove = (val) => {
 		if (this.head === null) return false;
@@ -104,9 +101,8 @@ class SingleLinkedList {
 
 	/**
 	 * Removes a value at the given index.
-	 *
-	 * @param {number} i  the index at which to remove the element
-	 * @returns {} the value removed or null if the index is larger than the length
+	 * @param {number} i - The index at which to remove the element.
+	 * @returns {*} The value removed or null if the index is larger than the length.
 	 */
 	removeAt = (i) => {
 		if (i >= this.length) return null;
@@ -121,9 +117,8 @@ class SingleLinkedList {
 	};
 
 	/**
-	 * Returns the first index of the value if the value is in the linked list
-	 *
-	 * @param {} val  the value to search for in the linked list
+	 * Returns the first index of the value if the value is in the linked list.
+	 * @param {*} val - The value to search for in the linked list.
 	 */
 	find = (val) => {
 		if (this.head === null) return null;
@@ -137,9 +132,8 @@ class SingleLinkedList {
 
 	/**
 	 * Gets the value at a given index in the linked list.
-	 *
-	 * @param {number} i  the index to get the value at
-	 * @returns {}  the value at the given index, or null if the index is larger than the length
+	 * @param {number} i - The index to get the value at.
+	 * @returns {*} The value at the given index, or null if the index is larger than the length.
 	 */
 	findAt = (i) => {
 		if (i >= this.length) return null;
