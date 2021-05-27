@@ -3,19 +3,13 @@ const Sort = require('./Sort');
 
 test('Bubble sort works with a small array', () => {
 	let array = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.bubble(array)).toEqual(sortedArray);
 });
 
 test('Bubble sort works with a medium array', () => {
 	let array = Array.from({ length: 1000 }, () => Math.floor(Math.random() * 1000));
-	let sortedArray = array.sort();
-	expect(Sort.bubble(array)).toEqual(sortedArray);
-});
-
-test('Bubble sort works with a large-ish array', () => {
-	let array = Array.from({ length: 100000 }, () => Math.floor(Math.random() * 100000));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.bubble(array)).toEqual(sortedArray);
 });
 
@@ -31,19 +25,13 @@ test('Bubble sort throws an error if something other than an array is used as in
 
 test('Insertion sort works with a small array', () => {
 	let array = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.insertion(array)).toEqual(sortedArray);
 });
 
 test('Insertion sort works with a medium array', () => {
 	let array = Array.from({ length: 1000 }, () => Math.floor(Math.random() * 1000));
-	let sortedArray = array.sort();
-	expect(Sort.insertion(array)).toEqual(sortedArray);
-});
-
-test('Insertion sort works with a large-ish array', () => {
-	let array = Array.from({ length: 100000 }, () => Math.floor(Math.random() * 100000));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.insertion(array)).toEqual(sortedArray);
 });
 
@@ -59,19 +47,13 @@ test('Insertion sort throws an error if something other than an array is used as
 
 test('Selection sort works with a small array', () => {
 	let array = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.selection(array)).toEqual(sortedArray);
 });
 
 test('Selection sort works with a medium array', () => {
 	let array = Array.from({ length: 1000 }, () => Math.floor(Math.random() * 1000));
-	let sortedArray = array.sort();
-	expect(Sort.selection(array)).toEqual(sortedArray);
-});
-
-test('Selection sort works with a large-ish array', () => {
-	let array = Array.from({ length: 100000 }, () => Math.floor(Math.random() * 100000));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.selection(array)).toEqual(sortedArray);
 });
 
@@ -87,19 +69,13 @@ test('Selection sort throws an error if something other than an array is used as
 
 test('Quick sort works with a small array', () => {
 	let array = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.quick(array)).toEqual(sortedArray);
 });
 
 test('Quick sort works with a medium array', () => {
 	let array = Array.from({ length: 1000 }, () => Math.floor(Math.random() * 1000));
-	let sortedArray = array.sort();
-	expect(Sort.quick(array)).toEqual(sortedArray);
-});
-
-test('Quick sort works with a large-ish array', () => {
-	let array = Array.from({ length: 100000 }, () => Math.floor(Math.random() * 100000));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.quick(array)).toEqual(sortedArray);
 });
 
@@ -115,19 +91,13 @@ test('Quick sort throws an error if something other than an array is used as inp
 
 test('Merge sort works with a small array', () => {
 	let array = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.merge(array)).toEqual(sortedArray);
 });
 
 test('Merge sort works with a medium array', () => {
 	let array = Array.from({ length: 1000 }, () => Math.floor(Math.random() * 1000));
-	let sortedArray = array.sort();
-	expect(Sort.merge(array)).toEqual(sortedArray);
-});
-
-test('Merge sort works with a large-ish array', () => {
-	let array = Array.from({ length: 100000 }, () => Math.floor(Math.random() * 100000));
-	let sortedArray = array.sort();
+	let sortedArray = [...array].sort((a, b) => a - b);
 	expect(Sort.merge(array)).toEqual(sortedArray);
 });
 
