@@ -1,7 +1,24 @@
 /**
  * Class representing a hash table data structure that efficiently stores and retrieves values based on their key.
+ * @class
+ * @typedef {object} HashTable
+ * @property {number} size - The number of values in the hash table.
+ * @property {string[]} buckets - The array of strings that stores hashed key, value pairs.
  */
 class HashTable {
+	/**
+	 * The number of values in the hash table.
+	 * @type {number}
+	 * @private
+	 */
+	#size;
+
+	/**
+	 * The array of strings that stores hashed key, value pairs.
+	 * @type {string[]}
+	 * @private
+	 */
+
 	/**
 	 * Creates a new hash table.
 	 * @param {number} [numBuckets=255] - The number of available buckets to store keys in.
@@ -12,7 +29,15 @@ class HashTable {
 			throw new Error('Initial number of buckets for the hash table should be a positive number.');
 		}
 		this.buckets = new Array(numBuckets);
-		this.size = 0;
+		this.#size = 0;
+	}
+
+	/**
+	 * Returns the number of values in the hash table.
+	 * @return {number} - The number of values in the hash table.
+	 */
+	get size() {
+		return this.#size;
 	}
 
 	/**
@@ -47,14 +72,14 @@ class HashTable {
 		let pair = [key, value];
 		if (this.buckets[hash] === undefined) {
 			this.buckets[hash] = [pair];
-			this.size++;
+			this.#size++;
 			return true;
 		} else {
 			if (!this.buckets[hash].every((el) => el[0] !== key)) {
 				return false;
 			} else {
 				this.buckets[hash].push(pair);
-				this.size++;
+				this.#size++;
 				return true;
 			}
 		}
@@ -105,7 +130,7 @@ class HashTable {
 		});
 		if (index !== undefined) {
 			this.buckets[hash] = [...this.buckets[hash].slice(0, index), ...this.buckets[hash].slice(index + 1)];
-			this.size--;
+			this.#size--;
 		}
 		return value;
 	};
